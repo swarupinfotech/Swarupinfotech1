@@ -1,0 +1,83 @@
+{% extends 'auth/base.html' %}
+
+
+{% block body %}
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 text-center mb-5">
+            <h2 class="heading-section">Swarupinfotech - Login</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-12 col-lg-10">
+            <div class="wrap d-md-flex">
+              <div
+                class="img"
+                style="
+                  background-image: url(https://preview.colorlib.com/theme/bootstrap/login-form-14/images/bg-1.jpg.webp);
+                "
+              ></div>
+              <div class="login-wrap p-4 p-md-5">
+                <div class="d-flex">
+                  <div class="w-100">
+                    <h3 class="mb-4">Sign In</h3>
+                  </div>
+                  <div class="w-100">
+                    
+                  </div>
+                </div>
+                <form action="/login/" method="post" class="signin-form">
+                  {% csrf_token %}
+                  <div class="form-group mb-3">
+                    <label class="label" for="name">Number</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      placeholder="Number"
+                      required
+                      name="number"
+                    />
+                  </div>
+                  <div class="form-group mb-3">
+                    <label class="label" for="password">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Password"
+                      required
+                      name="password"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="submit"
+                      class="form-control btn btn-primary rounded submit px-3"
+                      value="Sign In"
+                    />
+                     
+                  </div>
+                  <div class="form-group d-md-flex">
+                    {% comment %} <div class="w-50 text-left">
+                      <label class="checkbox-wrap checkbox-primary mb-0"
+                        >Remember Me
+                        <input type="checkbox" checked />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div> {% endcomment %}
+                    {% comment %} <div class="w-50 text-md-right">
+                      <a href="#">Forgot Password</a>
+                    </div> {% endcomment %}
+                  </div>
+                </form>
+                <p class="text-center">
+                  Not a member? <a  href="/signup">Sign Up</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+{% endblock body %}
